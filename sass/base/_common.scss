@@ -1,0 +1,19 @@
+address {
+  font-style: normal;
+}
+
+img {
+  display: block;
+}
+
+body {
+  font-family: $current-font;
+  color: $brand-font-color;
+  background-color: $white-color;
+  font-size: 14px;
+}
+
+input,
+textarea {
+  outline: none;
+}

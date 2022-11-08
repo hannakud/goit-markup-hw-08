@@ -1,0 +1,172 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid $black-color;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity, visibility $duration $transition;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+.modal {
+  width: 528px;
+  background: $white-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  padding: 40px;
+  transform: scale(1);
+  transform: translate(-50%, -50%);
+  transition: scale, transform $duration $transition;
+
+  &__btn-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0px;
+    background-color: $white-color;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    &:hover,
+    &:focus {
+      color: $focus-color;
+    }
+  }
+  &__close-icon {
+    fill: currentColor;
+    transition: color 250ms var(--transition);
+  }
+  &__title {
+    width: 448px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+  }
+}
+
+.form {
+  &__field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  &__label {
+    display: block;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: $grey-color;
+    margin-bottom: 4px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 40px;
+    padding-left: 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: $main-border-radius;
+    position: relative;
+    transition: border $duration $transition;
+    &:focus {
+      border: 1px solid $focus-color;
+      cursor: pointer;
+      outline: none;
+    }
+    &:focus ~ .form__icon {
+      fill: $focus-color;
+    }
+  }
+  &__icon {
+    fill: currentColor;
+    position: absolute;
+    left: 13px;
+    bottom: 14px;
+    transition: fill $duration $transition;
+  }
+  &__textarea {
+    resize: none;
+    width: 100%;
+    height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: $main-border-radius;
+    padding: 12px 16px;
+    transition: border $duration $transition;
+    &:focus {
+      border: 1px solid $focus-color;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+  &__agreement {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 30px 0;
+  }
+  &__agreement-label {
+    @include flex-list(5px);
+  }
+  &__agreement-input {
+    appearance: none;
+    &:checked + .form__agreement-icon {
+      background-color: $focus-color;
+      border-color: $focus-color;
+    }
+  }
+  &__agreement-icon {
+    width: 16px;
+    height: 15px;
+    border: 2px solid #212121;
+    border-radius: 3px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__agreement-chekbox {
+    display: flex;
+    color: $grey-color;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+  }
+  &__agreement-link {
+    @extend %link;
+    border-bottom: 1px solid $focus-color;
+    color: $focus-color;
+  }
+  &__agreement-btn {
+    @extend %button;
+    padding: 10px 52px;
+    transition: background-color $duration $transition;
+    &:hover,
+    &:focus {
+      background-color: $hover-btn-color;
+    }
+  }
+}

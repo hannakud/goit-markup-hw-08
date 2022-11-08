@@ -1,0 +1,5 @@
+@mixin flex-list($gap: 30px) {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}

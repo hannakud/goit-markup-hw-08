@@ -1,0 +1,37 @@
+.hero {
+  background-color: $brand-background;
+  align-items: center;
+  padding: 200px 0;
+  max-width: 1600px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/portfolio/overlay.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__title {
+    color: $white-color;
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 auto 30px;
+    max-width: 696px;
+  }
+
+  &__btn {
+    @extend %button;
+    width: max-content;
+    padding: 10px 32px;
+    transition: background-color $duration $transition;
+    &:hover,
+    &:focus {
+      background-color: $hover-btn-color;
+    }
+  }
+}

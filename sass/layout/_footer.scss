@@ -1,0 +1,108 @@
+.footer {
+  background-color: $brand-background;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__address {
+    margin-top: 20px;
+  }
+  &__form-container {
+    display: flex;
+  }
+
+  &__form-input {
+    width: 358px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: $main-border-radius;
+    background-color: transparent;
+    padding-left: 16px;
+    color: $white-color;
+    outline: transparent;
+  }
+
+  &__submit-btn {
+    @extend %button;
+    display: flex;
+    font-family: inherit;
+    min-width: 200px;
+    padding: 10px 28px;
+    margin-left: 12px;
+    transition: background-color $duration $transition;
+    &:hover,
+    &:focus {
+      background-color: $hover-btn-color;
+    }
+  }
+  &__submit-btn-icon {
+    margin-left: 10px;
+  }
+}
+.address-list {
+  &__link {
+    @extend %link;
+    font-style: normal;
+    text-decoration: none;
+    color: $color-rgba;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+
+    &--white {
+      color: $white-color;
+      text-decoration: none;
+    }
+    &--hoverable {
+      &:hover,
+      &:focus {
+        color: $focus-color;
+      }
+    }
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 9px;
+  }
+}
+
+.connect {
+  &__title {
+    color: $white-color;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  &__list {
+    @include flex-list($gap: 10px);
+    flex-wrap: wrap;
+  }
+  &__list-item {
+    width: 44px;
+    height: 44px;
+  }
+  &__list-link {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: $white-color;
+    transition: background-color $duration $transition;
+
+    &:hover,
+    &:focus {
+      background-color: $focus-color;
+    }
+  }
+  &__list-icon {
+    @extend %icon;
+  }
+}

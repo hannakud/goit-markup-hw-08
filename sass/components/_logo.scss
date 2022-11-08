@@ -1,0 +1,19 @@
+.logo {
+  @extend %link;
+  font-family: $logo-font;
+  font-weight: 700;
+  font-size: 26px;
+  text-decoration: none;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  margin-right: 93px;
+  color: $focus-color;
+
+  &__studio-text {
+    color: $black-color;
+
+    &--light {
+      color: $white-color;
+    }
+  }
+}
