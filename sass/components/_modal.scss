@@ -21,7 +21,7 @@
   }
 }
 .modal {
-  width: 528px;
+  width: 450px;
   background: $white-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -59,12 +59,9 @@
     transition: color 250ms var(--transition);
   }
   &__title {
-    width: 448px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 1.15;
+    width: 370px;
+    @include font(20px, 700, 1.15, 0.03em);
     text-align: center;
-    letter-spacing: 0.03em;
     margin-bottom: 12px;
   }
 }
@@ -80,9 +77,7 @@
   }
   &__label {
     display: block;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.01em;
+    @include font(12px, 400, 1.17, 0.01em);
     color: $grey-color;
     margin-bottom: 4px;
   }
@@ -119,6 +114,9 @@
     border-radius: $main-border-radius;
     padding: 12px 16px;
     transition: border $duration $transition;
+    &::placeholder {
+      font-size: 12px;
+    }
     &:focus {
       border: 1px solid $focus-color;
       cursor: pointer;
@@ -132,6 +130,7 @@
   }
   &__agreement-label {
     @include flex-list(5px);
+    font-size: 12px;
   }
   &__agreement-input {
     appearance: none;
@@ -153,6 +152,7 @@
     display: flex;
     color: $grey-color;
     line-height: 1.17;
+    font-size: 12px;
     letter-spacing: 0.03em;
   }
   &__agreement-link {
@@ -167,6 +167,21 @@
     &:hover,
     &:focus {
       background-color: $hover-btn-color;
+    }
+  }
+}
+// @media screen and (min-width: 768px) {
+
+// }
+
+@include desktop {
+  .modal {
+    width: 528px;
+    &__title {
+      width: 448px;
+    }
+    &__agreement-chekbox {
+      font-size: 14px;
     }
   }
 }

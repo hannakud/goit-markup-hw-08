@@ -1,44 +1,66 @@
 .advantages {
-  padding-bottom: 0;
-
   &__list {
-    display: flex;
-  }
-  &__list-item {
-    max-width: 270px;
-
-    &:not(:last-child) {
-      margin-right: 30px;
-    }
+    @include flex-list;
+    flex-direction: column;
   }
 
   &__box-icon {
     @include flex-list;
-    max-width: 270px;
-    height: 120px;
     justify-content: center;
-    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    height: 120px;
+    // flex-direction: column;
     margin-bottom: 30px;
     background-color: $second-background;
-  }
-  &__icon {
-    width: 70px;
-    height: 70px;
+    border-radius: $main-border-radius;
   }
 
+  &__title {
+    @include font(14px, 700, 1.17, 0.03em);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+    &--hidden {
+      @extend %visually-hidden;
+    }
+  }
   &__text {
     color: $grey-color;
     line-height: 1.71;
     letter-spacing: 0.03em;
   }
-  &__title {
-    font-size: 14px;
-    text-transform: uppercase;
-    line-height: 1.17;
-    letter-spacing: 0.03em;
-    margin-bottom: 10px;
-    &--hidden {
-      @extend %visually-hidden;
+}
+
+@include tablet {
+  .advantages {
+    &__list {
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    &__list-item {
+      width: calc((100% - 30px) / 2);
+    }
+
+    &__title {
+      text-align: left;
+    }
+  }
+}
+
+@include desktop {
+  .advantages {
+    padding-bottom: 0;
+    &__list {
+      flex-wrap: nowrap;
+    }
+    &__list-item {
+      width: 270px;
+    }
+    &__box-icon {
+      max-width: 270px;
+      flex-direction: column;
     }
   }
 }

@@ -1,31 +1,40 @@
-.solutions__list {
-  @include flex-list;
+@media screen and (max-width: 1199px) {
+  .solutions {
+    display: none;
+  }
 }
 
-.solutions__list-item {
-  max-width: 1200px;
-  height: auto;
-  position: relative;
-}
+@include desktop {
+  .solutions {
+    display: block;
 
-.solutions__card-item {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 70px;
-  background: rgba(47, 48, 58, 0.8);
-}
+    &__list {
+      @include flex-list;
+    }
 
-.solutions__card-text {
-  color: $white-color;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  text-align: center;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+    &__list-item {
+      max-width: 1200px;
+      height: auto;
+      position: relative;
+    }
+
+    &__card-item {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 70px;
+      background: rgba(47, 48, 58, 0.8);
+    }
+
+    &__card-text {
+      color: $white-color;
+      @include font(14px, 700, 1.14, 0.03em);
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
 }

@@ -1,11 +1,13 @@
-.clients-list {
-  @include flex-list;
-
-  &__item {
-    width: calc((100% - 150px) / 6);
+.clients {
+  &__list {
+    @include flex-list;
+    flex-wrap: wrap;
+  }
+  &__list-item {
+    flex-basis: calc((100% - 30px) / 2);
     height: 92px;
   }
-  &__link {
+  &__list-link {
     @extend %link;
     width: 100%;
     height: 100%;
@@ -22,7 +24,26 @@
       border: 1px solid $focus-color;
     }
   }
-  &__icon {
+  &__list-icon {
     @extend %icon;
+  }
+}
+
+@include tablet {
+  .clients {
+    &__list-item {
+      flex-basis: calc((100% - 60px) / 3);
+    }
+  }
+}
+
+@include desktop {
+  .clients {
+    &__list {
+      flex-wrap: nowrap;
+    }
+    &__list-item {
+      flex-basis: calc((100% - 150px) / 6);
+    }
   }
 }

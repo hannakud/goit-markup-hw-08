@@ -1,0 +1,114 @@
+.menu {
+  margin-left: auto;
+
+  &__social-list {
+    display: flex;
+    gap: 20px;
+  }
+  &__nav-list {
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    &--contacts {
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__nav-link {
+    @extend %link;
+    @include font(40px, 500, 1.18, 0.02em);
+    color: #212121;
+    transition: color $duration $transition;
+    &--current,
+    &:hover,
+    &:focus {
+      color: $focus-color;
+      @include font(40px, 500, 1.18, 0.02em);
+      @extend %link;
+    }
+  }
+
+  &__contacts-link {
+    @extend %link;
+    @include font(34px, 500, 1.18, 0.02em);
+    color: $focus-color;
+    transition: color $duration $transition;
+    &[href^='mailto'] {
+      font-size: 24px;
+      color: $grey-color;
+    }
+    &:hover,
+    &:focus {
+      color: $focus-color;
+    }
+  }
+
+  &__social-item {
+    &:not(:last-child) {
+      padding-right: 10px;
+      margin-right: 10px;
+      border-right: 1px solid rgba(33, 33, 33, 0.2);
+    }
+  }
+  &__social-link {
+    @extend %link;
+    color: $focus-color;
+    @include font(18px, 500, 1.22, 0.02em);
+  }
+}
+
+.js-open-menu {
+  border: none;
+  background-color: transparent;
+  margin: 10px 0 10px auto;
+  transform: translateX(0%);
+  @include tablet {
+    display: none;
+  }
+}
+
+.js-close-menu {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background-color: transparent;
+  transition: color $duration $transition;
+  &:hover,
+  &:focus {
+    color: $focus-color;
+  }
+  &__icon {
+    @extend %icon;
+  }
+}
+
+.js-menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(-150%);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 48px 40px;
+  background-color: $white-color;
+  transition: transform $duration $transition;
+  z-index: 1;
+}
+
+.is-open {
+  transform: translateX(0%);
+}
+
+@include tablet {
+  .js-menu {
+    display: none;
+  }
+}

@@ -1,37 +1,90 @@
 .hero {
   background-color: $brand-background;
   align-items: center;
-  padding: 200px 0;
+  // padding: 200px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 1600px;
-  min-height: 600px;
+  height: 400px;
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url(../images/portfolio/overlay.jpg);
+    url(/images/studio/overlay_mobile@1x-min.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
   &__title {
     color: $white-color;
-    font-size: 44px;
-    font-weight: 900;
-    line-height: 1.36;
-    letter-spacing: 0.06em;
+    @include font(26px, 900, 1.36, 0.06em);
     text-align: center;
     text-transform: uppercase;
     margin: 0 auto 30px;
-    max-width: 696px;
+    max-width: 360px;
   }
 
   &__btn {
     @extend %button;
-    width: max-content;
-    padding: 10px 32px;
+    min-width: 200px;
+    height: 50px;
+    padding: 10px 24px;
     transition: background-color $duration $transition;
     &:hover,
     &:focus {
       background-color: $hover-btn-color;
     }
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
+  screen and (min-resolution: 192dpi) and (max-width: 767px),
+  screen and (min-resolution: 2dppx) and (max-width: 767px) {
+  .hero {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(/images/studio/overlay_mobile@2x-min.jpg);
+  }
+}
+
+@include tablet {
+  .hero {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(/images/studio/overlay_tablet@1x-min.jpg);
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 768px),
+  screen and (min-resolution: 192dpi) and (max-width: 768px),
+  screen and (min-resolution: 2dppx) and (max-width: 768px) {
+  .hero {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(/images/studio/overlay_tablet@2x-min.jpg);
+  }
+}
+
+@include desktop {
+  .hero {
+    height: 600px;
+    padding: 200px 0;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(/images/studio/overlay_dekstop@1x-min.jpg);
+
+    &__title {
+      @include font(44px, 900, 1.36, 0.06em);
+      max-width: 696px;
+    }
+    &__btn {
+      padding: 10px 32px;
+      width: max-content;
+    }
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 1200px),
+  screen and (min-resolution: 192dpi) and (max-width: 1200px),
+  screen and (min-resolution: 2dppx) and (max-width: 1200px) {
+  .hero {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(/images/studio/overlay_dekstop@2x-min.jpg);
   }
 }

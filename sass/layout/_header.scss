@@ -7,7 +7,7 @@
 }
 
 .navigation {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: flex-start;
   &__list {
@@ -16,9 +16,7 @@
   &__link {
     @extend %link;
     color: $brand-font-color;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    line-height: 1.17;
+    @include font(14px, 500, 1.17, 0.02em);
     display: inline-block;
     padding: 32px 0;
     transition: color $duration $transition;
@@ -52,19 +50,18 @@
   }
 }
 .header-contacts {
-  @include flex-list(50px);
-  margin-left: auto;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
 
   &__link {
     @extend %link;
+    @include font(14px, 500, 1.14, 0.02em);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     color: $grey-color;
     text-decoration: none;
-    font-weight: 500;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
     transition: color $duration $transition;
 
     &:hover,
@@ -75,5 +72,24 @@
   &__icon {
     margin-right: 10px;
     @extend %icon;
+  }
+}
+
+@include tablet {
+  .navigation {
+    display: flex;
+  }
+  .header-contacts {
+    display: flex;
+    margin-left: auto;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@include desktop {
+  .header-contacts {
+    flex-direction: row;
+    gap: 30px;
   }
 }

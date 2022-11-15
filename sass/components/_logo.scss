@@ -1,19 +1,32 @@
 .logo {
   @extend %link;
   font-family: $logo-font;
-  font-weight: 700;
-  font-size: 26px;
+  @include font(26px, 700, 1.17, 0.03em);
   text-decoration: none;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  margin-right: 93px;
   color: $focus-color;
-
+  &__link {
+    margin-right: 93px;
+  }
   &__studio-text {
     color: $black-color;
 
     &--light {
       color: $white-color;
+    }
+  }
+}
+@include tablet {
+  .logo {
+    &__link {
+      margin-right: 88px;
+    }
+  }
+}
+
+@include desktop {
+  .logo {
+    &__link {
+      margin-right: 93px;
     }
   }
 }
