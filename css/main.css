@@ -408,12 +408,15 @@ textarea {
 
 .menu {
   margin-left: auto;
+  width: 100%;
 }
 .menu__social-list {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 .menu__nav-list {
   margin-bottom: auto;
@@ -467,7 +470,6 @@ textarea {
 }
 .menu__social-item:not(:last-child) {
   padding-right: 10px;
-  margin-right: 10px;
   border-right: 1px solid rgba(33, 33, 33, 0.2);
 }
 .menu__social-link {
@@ -504,6 +506,7 @@ textarea {
   color: #2196f3;
 }
 .js-menu-container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
