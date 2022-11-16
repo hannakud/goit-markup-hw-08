@@ -32,8 +32,6 @@
   &__list {
     @include flex-list;
     flex-direction: column;
-    // flex-wrap: wrap;
-    // gap: 30px;
   }
   &__list-item {
     max-width: 450px;
@@ -110,7 +108,6 @@
   .projects {
     &__list {
       flex-wrap: wrap;
-      // flex-direction: row;
     }
     &__list-item {
       width: calc(100% / 3 - 20px);
