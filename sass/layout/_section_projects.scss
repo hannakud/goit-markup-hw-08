@@ -30,15 +30,18 @@
     @extend %visually-hidden;
   }
   &__list {
-    @include flex-list;
+    display: flex;
+    gap: 30px;
     flex-direction: column;
   }
   &__list-item {
     max-width: 450px;
   }
+
   &__item-link {
     @extend %link;
     display: block;
+    height: 100%;
     transition: box-shadow $duration $transition;
     &:hover,
     &:focus {
@@ -60,8 +63,9 @@
   }
   &__overlay-text {
     position: absolute;
-    padding: 63px 24px;
+    padding: 77px 24px;
     top: 100%;
+    height: 100%;
     @include font(18px, 400, 1.56, 0.03em);
     color: $white-color;
     background-color: rgba(33, 150, 243, 0.9);
@@ -86,13 +90,14 @@
     &__list {
       flex-wrap: wrap;
       flex-direction: row;
-      align-items: flex-start;
+      justify-content: left;
     }
     &__filter-list {
       justify-content: center;
+      margin-bottom: 30px;
     }
     &__list-item {
-      width: calc((100% - 60px) / 2);
+      width: calc((100% - 30px) / 2);
     }
     &__item-link {
       display: flex;
@@ -102,15 +107,25 @@
     &__overlay {
       flex-grow: 1;
     }
+    &__overlay-text {
+      padding: 49px 24px 77px 24px;
+    }
   }
 }
 @include desktop {
   .projects {
     &__list {
       flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__filter-list {
+      margin-bottom: 50px;
     }
     &__list-item {
       width: calc(100% / 3 - 20px);
+    }
+    &__overlay-text {
+      padding: 63px 24px;
     }
   }
 }
