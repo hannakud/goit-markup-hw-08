@@ -159,6 +159,12 @@
     &__submit-btn {
       margin: 0 0 0 12px;
     }
+    &__address-box {
+      align-items: baseline;
+    }
+  }
+  .address-list {
+    text-align: left;
   }
   .connect {
     &__title {
