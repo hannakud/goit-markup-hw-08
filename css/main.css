@@ -486,6 +486,11 @@ textarea {
   margin: 10px 0 10px auto;
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.js-open-menu:hover, .js-open-menu:focus {
+  fill: #2196f3;
 }
 @media screen and (min-width: 768px) {
   .js-open-menu {

@@ -65,6 +65,11 @@
   background-color: transparent;
   margin: 10px 0 10px auto;
   transform: translateX(0%);
+  transition: fill $duration $transition;
+  &:hover,
+  &:focus {
+    fill: $focus-color;
+  }
   @include tablet {
     display: none;
   }
