@@ -185,6 +185,12 @@
     &__agreement-link {
       font-size: 12px;
     }
+    &__label {
+      @include font(14px, 400, 1.17, 0.01em);
+    }
+    // &__agreement-chekbox {
+    //   font-size: 14px;
+    // }
   }
 }
 
@@ -194,7 +200,12 @@
     &__title {
       width: 448px;
     }
+  }
+  .form {
     &__agreement-chekbox {
+      font-size: 14px;
+    }
+    &__agreement-link {
       font-size: 14px;
     }
   }
